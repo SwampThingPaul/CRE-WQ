@@ -29,7 +29,7 @@ library(reshape)
 library(Hmisc)
 library(zoo)
 library(RcppRoll)
-
+library(icon);#devtools::install_github("ropenscilabs/icon")
 
 #Spatial
 library(rgeos)
@@ -1287,6 +1287,11 @@ abline(h=ymaj,v=xmaj,lty=3,col="grey")
 
 - Bailey, N., W. Magley, J. Mandrup-Poulsen, K O'Donnell, R. Peets (2009) Final TMDL Report. Nutrient TMDL for the Caloosahatchee Estuary (WBIDs 3240A, 3240B and 3240C). Florida Department of Environmental Protection. Tallahassee, Florida. [pdf link](https://floridadep.gov/sites/default/files/tidal-caloosa-nutr-tmdl_0.pdf).
 
-<i class="fab fa-github"></i>
+***
+
+All code for this report has been posted to Github
+
+`r icon::fa("github")`
+
 
 ***
