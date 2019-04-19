@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<title>Environmental Monitoring Stations</title>
+<onlink>https://services1.arcgis.com/sDAPyc2rGRn7vf9B/arcgis/rest/services/DBHYDRO_Site_Station/FeatureServer</onlink>
+</citeinfo>
+</citation>
+<descript>
+<abstract>The dataset represents the DBHYDRO Monitoring Stations in Southern Florida.  All locations are monitoring station at which SFWMD, United States Geological Survey (USGS), United States Army Corps of Engineers (USACE), or another cooperating agency as indicated in the data set, are monitoring, or have monitored environmental parameters. This inventory of locations and activities is based on the contents of the SFWMD DBHYDRO corporate environmental database. Activity types include flow, rainfall, stage (water level), weather, well, or water quality. The water quality activities are further sub-divided into categories of convenience. This data set is derived from the database view in the DBHYDRO database dmdbase.all_stations_activity_kml_vw. This DBHYDRO view consolidates the information from 16 underlying relational database tables, some of which are recreated nightly to summarize information for ready-retrieval. The business rules of 1) what parameters constitute what activity types, 2) what parameters constitute what activity sub-types, and 3) what determines active and inactive status are thus maintained at the origin of the data. The environmental monitoring application is designed to allow customers to find where and what we monitor and to provide access to time series data archived for those locations. This application supports our water quality, applied sciences, regulation, and permitting business.</abstract>
+<purpose>This dataset provides locations for hydrometeorologic and water quality monitoring throughout the South Florida Water Management District (SFWMD).</purpose>
+</descript>
+<keywords>
+<theme>
+<themekt>None</themekt>
+<themekey>DBHYDRO</themekey>
+<themekey>monitoring</themekey>
+<themekey>station</themekey>
+<themekey>Autosampler</themekey>
+<themekey>Birds</themekey>
+<themekey>Fish</themekey>
+<themekey>Flow</themekey>
+<themekey>Groundwater</themekey>
+<themekey>Logged</themekey>
+<themekey>Plants</themekey>
+<themekey>Rain</themekey>
+<themekey>Sediment</themekey>
+<themekey>Stage</themekey>
+<themekey>Water Quality</themekey>
+<themekey>Surface Water</themekey>
+<themekey>Hydrometerologic</themekey>
+<themekey>Grabsample</themekey>
+<themekey>Weather</themekey>
+<themekey>Well</themekey>
+<themekey>SFWMD</themekey>
+<themekey>Water Management District</themekey>
+<themekey>Florida</themekey>
+<themekey>USGS</themekey>
+<themekey>USACE</themekey>
+<themekey>south</themekey>
+</theme>
+</keywords>
+<accconst>None</accconst>
+<useconst>None</useconst>
+<datacred>SFWMD Geospatial Services</datacred>
+</idinfo>
+<spdoinfo>
+<ptvctinf>
+<sdtsterm>
+<ptvctcnt>20499</ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>DBHYDR_SITE_STATION</enttypl>
+<enttypd>SDE feature class</enttypd>
+<enttypds>Esri</enttypds>
+</enttyp>
+<attr>
+<attrlabl>LAT</attrlabl>
+<attrdef>The geographic location as Latitude.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>STATION</attrlabl>
+<attrdef>The Station ID, is a specific coordinate that indicate where data (observation, sampling or monitoring) are collected. Data are usually assigned to stations by various classifications such as stage, flow, weather, and water quality. A coordinate may have more than one station associated with it. The name given to a station has traditionally been similar to, or an exact duplicate of, the corresponding site name.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>ACTIVITY_TYPE</attrlabl>
+<attrdef>A broad characterization of the data based on the parameter being measured.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>OBJECTID</attrlabl>
+<attrdef>Internal feature number.</attrdef>
+<attrdefs>Esri</attrdefs>
+<attrdomv>
+					<udom>Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape</attrlabl>
+<attrdef>Feature geometry.</attrdef>
+<attrdefs>Esri</attrdefs>
+<attrdomv>
+					<udom>Coordinates defining the features.</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>LON</attrlabl>
+<attrdef>The geographic location as Longitude.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>SITE</attrlabl>
+<attrdef>The Site ID is a representative point used to designate one or more stations that are associated by proximity or project. Site level representation is to provide clarity for small scale mapping in lieu of displaying a high density of associated stations.The site location is often based on the position of a recording device or can be derived from a common sense location between the associated stations. A site should not be viewed as an area feature with specific boundaries but simply as a representative location of activity.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>ACTIVITY_SUBTYPE</attrlabl>
+<attrdef>Somewhat arbitrary breakdown of activity type based on common use of the data.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>STATUS</attrlabl>
+<attrdef>An indication whether or not monitoring is considered active or inactive. This status is based, in part, on how long it has been since the date of the most recent monitoring activity stored in DBHYDRO. It may take some time for time to elapse before a station is considered inactive.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>POINT_X</attrlabl>
+<attrdef>The State Plane coordinate in NAD 83 Florida East for the X Coord.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>POINT_Y</attrlabl>
+<attrdef>The State Plane coordinate in NAD 83 Florida East for the Y Coord.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>END_DATE</attrlabl>
+<attrdef>The end date, or date of most recent data in DBHYDRO, for this data set.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>STATION_DESC</attrlabl>
+<attrdef>The location description of this site/station.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+<attr>
+<attrlabl>START_DATE</attrlabl>
+<attrdef>The start date of this data set.</attrdef>
+<attrdefs>SFWMD</attrdefs>
+</attr>
+</detailed>
+</eainfo>
+<metainfo>
+<metd>20180724</metd>
+<metc>
+<cntinfo>
+<!--no contact person or organization name available-->
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>local time</mettc>
+</metainfo>
+</metadata>
