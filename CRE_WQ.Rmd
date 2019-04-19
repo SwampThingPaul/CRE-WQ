@@ -4,7 +4,6 @@ author:
 output: 
   html_document: 
     fig_caption: yes
-
 ---
 
 ```{css,echo=FALSE}
@@ -1289,9 +1288,7 @@ abline(h=ymaj,v=xmaj,lty=3,col="grey")
 
 ***
 
-All code for this report has been posted to Github
-
-`r icon::fa("github")`
+Code hosted at [`r icon::fa("github")`](https://github.com/SwampThingPaul/CRE-WQ)
 
 
 ***
