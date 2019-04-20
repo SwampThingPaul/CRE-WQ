@@ -9,7 +9,7 @@ output:
 ```{css,echo=FALSE}
 body{
   font-family: "serif",serif;
-  
+  font-size: 12pt;
 }
 
 ```
@@ -1287,6 +1287,10 @@ abline(h=ymaj,v=xmaj,lty=3,col="grey")
 - Bailey, N., W. Magley, J. Mandrup-Poulsen, K O'Donnell, R. Peets (2009) Final TMDL Report. Nutrient TMDL for the Caloosahatchee Estuary (WBIDs 3240A, 3240B and 3240C). Florida Department of Environmental Protection. Tallahassee, Florida. [pdf link](https://floridadep.gov/sites/default/files/tidal-caloosa-nutr-tmdl_0.pdf).
 
 ***
+
+Created and Maintained by Paul Julian, PhD PWS  [`r icon::fa("envelope")`](mailto:pauljulianphd@gmail.com) [`r icon::fa("chrome")`](https://swampthingpaul.github.io) [`r icon::fa("twitter")`](https://twitter.com/SwampThingPaul) [`r icon::fa("github")`](https://github.com/SwampThingPaul)    
+
+Updated: `r paste(format(Sys.Date(),"%B %d, %Y"))`
 
 Code hosted at [`r icon::fa("github")`](https://github.com/SwampThingPaul/CRE-WQ)
 
