@@ -29,6 +29,8 @@ library(Hmisc)
 library(zoo)
 library(RcppRoll)
 library(icon);#devtools::install_github("ropenscilabs/icon")
+library(kableExtra)
+#https://haozhu233.github.io/kableExtra/awesome_table_in_html.html
 
 #Spatial
 library(rgeos)
@@ -47,6 +49,7 @@ utm17=CRS("+proj=utm +zone=17 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_d
 counties=spTransform(readOGR(GIS.path,"Florida_Counties"),utm17)
 wbids=spTransform(readOGR(GIS.path,"FDEP_WBID_LeeCo"),utm17)
 #monitoring=spTransform(readOGR(GIS.path,"Environmental_Monitoring_Stations"),utm17)
+cal.planning=spTransform(readOGR(GIS.path,"Caloosa_planning"),utm17)
 
 lee.co=subset(counties,COUNTYNAME=="LEE")
 wbids.cal=subset(wbids,WBID%in%c("3240C","3240B","3240A"))
@@ -58,6 +61,9 @@ wbids.cal=subset(wbids,WBID%in%c("3240C","3240B","3240A"))
 monitoring.cal=spTransform(readOGR(GIS.path,"Caloosa_wq"),utm17)
 
 tmap_mode("view")
+
+planning.map=tm_basemap(leaflet::providers$Esri.WorldImagery,alpha=0.9)+
+  tm_shape(cal.planning)+tm_polygons(col="PLANNING_U",alpha=0.3,title="Planning Units",border.col="white")
 
 map=tm_basemap(leaflet::providers$Esri.WorldImagery,alpha=0.9)+
   tm_shape(subset(counties,COUNTYNAME!="LEE"))+tm_polygons(col="grey",id=NA,alpha=0.75)+
@@ -75,6 +81,11 @@ map=tm_basemap(leaflet::providers$Esri.WorldImagery,alpha=0.9)+
 
 *This page is best view in Google Chrome or Firefox.*
 
+```{r, out.width="60%",fig.align="center",echo=FALSE,fig.cap="S-79 lock looking west. *Unknown source*."}
+knitr::include_graphics("maxresdefault.jpg")
+```
+
+
 <!--
 **Objective(s)**
 
@@ -83,49 +94,77 @@ map=tm_basemap(leaflet::providers$Esri.WorldImagery,alpha=0.9)+
 
 ## Basin Information
 
-The Caloosahatchee Basin in its entirity encompassess aproximately 860 thousand acres (3,470 square kilometers) across three counties (Lee, Hendry and Glades). The Florida Department of Environmental Protection (FDEP) has divided the Caloosahatchee basin into five planning units: East Caloosahatchee, West Caloosahatchee, Orange River, Telegraph Swamp and Caloosahatchee Estuary (Bailey et al. 2009). East and West Caloosahatchee are located upstream of the S-79 structure (see map below) between the S-79 and S-77 (Lake Okeechobee). Meanwhile the Orange River, Telegraph Swamp, and the Caloosahatchee Estuary planning units are located downstream of the S-79 (Figure 1). Each planning unit is composed of a series of sub-basins idenified with waterbody idenfication numbers (WBIDs). All of these sub-basins  except for one are classified as Class III (Designated use: _fishable and swimmable_) water bodies. The exception is the Class I (Designated use: _drinking water_) sub-basin immediately upstream of the S-79 structure (WBID: 3235A) which extends to the Lee-Hendry county line. 
+The Caloosahatchee Basin in its entirity encompassess aproximately 860 thousand acres (3,470 square kilometers) across three counties (Lee, Hendry and Glades). The Florida Department of Environmental Protection (FDEP) has divided the Caloosahatchee basin into five planning units: East Caloosahatchee, West Caloosahatchee, Orange River, Telegraph Swamp and Caloosahatchee Estuary (Figure 1; Bailey et al. 2009). East and West Caloosahatchee are located upstream of the S-79 structure (see map below) between the S-79 and S-77 (Lake Okeechobee). Meanwhile the Orange River, Telegraph Swamp, and the Caloosahatchee Estuary planning units are located downstream of the S-79 (Figure 2). Each planning unit is composed of a series of sub-basins idenified with waterbody idenfication numbers (WBIDs). All of these sub-basins  except for one are classified as Class III (Designated use: _fishable and swimmable_) water bodies. The exception is the Class I (Designated use: _drinking water_) sub-basin immediately upstream of the S-79 structure (WBID: 3235A) which extends to the Lee-Hendry county line. 
+
+<center>
+```{r plan Map,echo=FALSE,message=FALSE,out.width="80%"}
+tm_basemap(leaflet::providers$Esri.WorldImagery,alpha=0.9)+
+  tm_shape(cal.planning)+tm_polygons(col="PLANNING_U",alpha=0.3,title="Planning Units",border.col="white")
+```
+</center>
+
+<center> __Figure 1:__ Interactive map indicating Caloosahatchee River basins planning units. </center>
 
 ## Water Quality Impairments
 
-Water quality impairments in the Tidal Caloosahathcee River and Tributaries were verified as an impaired waterbody due to low Dissolved Oxygen (DO) and high chlorophyll-a (Chl-a) presumably caused by high total nitrogen (TN), total phosphorus (TP) or biochemical oxygen demand (i.e. causative pollutants) concentrations determined during the _Cycle 1_ assessment (2005) (Table 1). Since this inital assessment, these basins have been verified as impaired for un-ionized ammonia (WBID 3240A) and iron (WBIDs 3240B and 3240C) [Verified List](https://floridadep.gov/dear/watershed-assessment-section/documents/verified-list-impaired-waters-group-3-basins-cycle-3). Since the _Cycle 1_, _Cylce 2_ and _Cycle 3_ impairment verification assessments and the establishment of the Total Maximum Daily Load (TMDL), estuary numeric nutrient criteria have also been developed specifically for this estuary ([62-302.532(1)(d)](https://www.flrules.org/gateway/RuleNo.asp?title=SURFACE%20WATER%20QUALITY%20STANDARDS&ID=62-302.532) Florida Administrative Code (FAC), Table 2 below). An interactive map for all FDEP adopted numeric nutrient criteria can be found at this [link](https://ca.dep.state.fl.us/mapdirect/?focus=nutrientcriteria).
+Water quality impairments in the Tidal Caloosahathcee River and Tributaries were verified as an impaired waterbody due to low Dissolved Oxygen (DO) and high chlorophyll-a (Chl-a) presumably caused by high total nitrogen (TN), total phosphorus (TP) or biochemical oxygen demand (i.e. causative pollutants) concentrations determined during the _Cycle 1_ assessment (2005) (Table 1). Since this inital assessment, these basins have been verified as impaired for un-ionized ammonia (WBID 3240A) and iron (WBIDs 3240B and 3240C) [Verified List](https://floridadep.gov/dear/watershed-assessment-section/documents/verified-list-impaired-waters-group-3-basins-cycle-3){target="_blank"}. Since the _Cycle 1_, _Cylce 2_ and _Cycle 3_ impairment verification assessments and the establishment of the Total Maximum Daily Load (TMDL), estuary numeric nutrient criteria have also been developed specifically for this estuary ([62-302.532(1)(d)](https://www.flrules.org/gateway/RuleNo.asp?title=SURFACE%20WATER%20QUALITY%20STANDARDS&ID=62-302.532){target="_blank"} Florida Administrative Code (FAC), Table 2 below). An interactive map for all FDEP adopted numeric nutrient criteria can be found at this [link](https://ca.dep.state.fl.us/mapdirect/?focus=nutrientcriteria){target="_blank"}.
 
 <br>
 
-<center> __Table 1:__ Verified impaired parameters identified during _Cycle 1_ Impaired Water Rule assessment by FDEP in 2005 for Tidal Caloosahatchee addressed in the 2009 Total Maximum Daily Load (TMDL; Bailey et al. 2009).</center>
-
-| WBID | Waterbody Segment | Waterbody Type | Parameters Identified | Concentration  Causing Impairment| 
-|:--: |:--: |:--: |:--: |:--: |
-| 3240A | Tidal Caloosahatchee (Lower) | Estuary (III) | Nutrients (Chl-a) | Median TN = 0.83 mg L^-1^ |
-| 3240B | Tidal Caloosahatchee (Mid) | Estuary (III) | Nutrients (Chl-a) | Median TN = 0.85 mg L^-1^ |
-| 3240C | Tidal Caloosahatchee (Upper) | Stream (III) | Nutrients (Chl-a) | Median TN = 1.105 mg L^-1^ |
-| | | | | |
-
-^1^ _Cycle 1_ verification period includes data from January 1, 1997 through June 30, 2004.
-
-<br>
-<br>
-
-<center> __Table 2:__ Estuary numeric nutrient criteria for the Caloosahatchee River Estuary as identified by 62-302.532(1)(d).</center>
-
-| Estuary/Segment | Total Phosphorus | Total Nitrogen | Chlorophyll-_a_ | 
-|:--: |:--: |:--: |:--: |
-| Upper Caloosahatchee River Estuary | 0.086 mg L^-1^ as long-term average | See subsection [62-304.800(2) FAC](https://www.flrules.org/gateway/ruleNo.asp?id=62-304.800) | 4.2 $\mu$g L^-1^ as long term average |
-| Middle Caloosahatchee River Estuary | 0.055 mg L^-1^ as long-term average | See subsection [62-304.800(2) FAC](https://www.flrules.org/gateway/ruleNo.asp?id=62-304.800) | 6.5 $\mu$g L^-1^ as long term average |
-| Lower Caloosahatchee River Estuary | 0.040 mg L^-1^ as long-term average | See subsection [62-304.800(2) FAC](https://www.flrules.org/gateway/ruleNo.asp?id=62-304.800) | 5.6 $\mu$g L^-1^ as long term average |
-| | | | |
-
-`r paste0("\u2020")` This information is up-to-date as of April 2019 and is subject to change pending revisions to Florida Administrative Code. For the most up-to-date information please follow this [link](https://www.flrules.org/gateway/RuleNo.asp?title=SURFACE%20WATER%20QUALITY%20STANDARDS&ID=62-302.532).
-
-<br>
-<br>
-
-
-```{r CRE Map,message=FALSE,echo=FALSE,out.width="100%",fig.align="center"}
-map
+```{r tab1 data, echo=F,include=FALSE}
+tab1=data.frame(WBID=c("3240A","3240B","3240C"),
+               Segment=c("Tidal Caloosahatchee (Lower)","Tidal Caloosahatchee (Middle)","Tidal Caloosahatchee (Upper)"),
+               Waterbody.Type=c("Estuary (III)","Estuary (III)","Stream (III)"),
+               Parameters.Identified=c(rep("Nutrients (Chl-a)",3)),
+               Conc.Impairment=c(paste0("Median TN = ",c(0.83,0.85,1.105),"mg L\u207B\u00B9")))
 
 ```
 
-<center> __Figure 1:__ Interactive map of monitored locations within Caloosahatchee River Estuary (CRE) relative to sub-basin/Water Body Identification (WBIDs). </center>
+<center> __Table 1:__ Verified impaired parameters identified during _Cycle 1_ Impaired Water Rule assessment by FDEP in 2005 for Tidal Caloosahatchee addressed in the 2009 Total Maximum Daily Load (TMDL; Bailey et al. 2009).</center>
+
+```{r tab1 table, echo=FALSE}
+kable(tab1,col.names=c("WBID","Waterbody Segment<br/>","Waterbody<br/> Type","Parameters<br/>Identified","Concentration<br/>Causing<br/>Impairment"),align=c("l",rep("c",4)),escape=F) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F) %>%
+  footnote(general=" ",
+           number=c("Cycle 1 verification period includes data from January 1, 1997 through June 30, 2004."))
+
+```
+
+<br>
+<br>
+
+
+```{r tab2 data , echo=F,include=FALSE}
+tab2=data.frame(Estuary.Seg=c("Upper Caloosahatchee River Estuary","Middle Caloosahatchee River Estuary","Lower Caloosahatchee River Estuary"),
+                TP=c(0.086,0.055,0.040),
+                TN=c(rep("See 62-304.800(2) FAC\u1d47",3)),
+                Chla=c(4.2,6.5,5.6))
+
+```
+
+<center> __Table 2:__ Estuary numeric nutrient criteria for the Caloosahatchee River Estuary as identified by 62-302.532(1)(d).</center>
+
+```{r tab2 table, echo=FALSE}
+kable(tab2,"html",col.names=c("Estuary/Segment<br/>","Total Phosphorous<br/>(mg L\u207B\u00B9) \u1d43","Total Nitrogen<br/>","Chlorphyll-A<br/>(\u03BCg L\u207B\u00B9) \u1d43"),booktabs=T,align=c("l",rep("c",3)),escape=F) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F) %>%
+  footnote(escape=F,general=" ",
+           alphabet=c("As Long-Term (5-Yr) average.",'<a href=https://www.flrules.org/gateway/ruleNo.asp?id=62-304.800 target="_blank">62-304.800(2)</a>'),
+           symbol=c('This information is up-to-date as of April 2019 and is subject to change pending revisions to Florida Administrative Code.<br/>For the most up-to-date information please follow this <a href=https://www.flrules.org/gateway/RuleNo.asp?title=SURFACE%20WATER%20QUALITY%20STANDARDS&ID=62-302.532 target="_blank">link</a>.'))
+
+
+
+```
+
+<br>
+<br>
+
+<center>
+```{r CRE Map,message=FALSE,echo=FALSE,out.width="80%"}
+map
+```
+</center>
+
+<center> __Figure 2:__ Interactive map of monitored locations within Caloosahatchee River Estuary (CRE) relative to sub-basin/Water Body Identification (WBIDs). </center>
 
 ```{r wq data,include=FALSE,echo=FALSE}
 estuary.site.list=data.frame(Station.ID=c("CES02","CES03","CAL 01","CES04","CAL 03","CES05","CAL 05","CES06","CAL 07","CES07","CAL 09","CES08","CAL 17","S79"),
@@ -186,7 +225,7 @@ est.dat.xtab=est.dat.xtab[order(est.dat.xtab$Station.ID,est.dat.xtab$Date.EST),]
 
 ## Water Quality Data
 
-Presented below is grab sample water quality data (collected approximately monthly) retrieved from the South Florida Water Management online environmental database ([DBHYDRO](http://my.sfwmd.gov/dbhydroplsql/show_dbkey_info.main_menu)). Data presented includes total phosphorus (TP), total nitrogen (TN), chlorophyll-_A_ (Chl-A), dissolved oxygen (DO) and salinity. The top row of plots show individual samples collected across a period of record. The bottom row of plots depict annually average data based on the Florida water (May to April), TP, TN and Chl-A are expressed as geometric mean (GM) concentrations while DO and salinity are expressed as arithmetic mean concentration. In addition to annual GM concentration a five-WY mean is also shown for TP, TN and Chl-A. The dissolved oxygen water quality standard (WQS) is identified for each station and a determination of achievement or exceedance of the WQS for each year is identified. Dissolved Oxygen WQS evaluation is consistent with [62-302.533 FAC](https://www.flrules.org/gateway/RuleNo.asp?title=SURFACE%20WATER%20QUALITY%20STANDARDS&ID=62-302.533) and the associated [technical support document]( https://floridadep.gov/sites/default/files/tsd-do-criteria-aquatic-life.pdf).
+Presented below is grab sample water quality data (collected approximately monthly) retrieved from the South Florida Water Management online environmental database ([DBHYDRO](http://my.sfwmd.gov/dbhydroplsql/show_dbkey_info.main_menu)). Data presented includes total phosphorus (TP), total nitrogen (TN), chlorophyll-_A_ (Chl-A), dissolved oxygen (DO) and salinity. The top row of plots show individual samples collected across a period of record. The bottom row of plots depict annually average data based on the Florida water (May to April), TP, TN and Chl-A are expressed as geometric mean (GM) concentrations while DO and salinity are expressed as arithmetic mean concentration. In addition to annual GM concentration a five-WY mean is also shown for TP, TN and Chl-A. The dissolved oxygen water quality standard (WQS) is identified for each station and a determination of achievement or exceedance of the WQS for each year is identified. Dissolved Oxygen WQS evaluation is consistent with [62-302.533 FAC](https://www.flrules.org/gateway/RuleNo.asp?title=SURFACE%20WATER%20QUALITY%20STANDARDS&ID=62-302.533) and the associated [technical support document]( https://floridadep.gov/sites/default/files/tsd-do-criteria-aquatic-life.pdf){target="_blank"}.
 
 Each tab presented data from sites along the Caloosahatchee River Estuary including the S-79.
 
@@ -1284,7 +1323,7 @@ abline(h=ymaj,v=xmaj,lty=3,col="grey")
 
 ## Reference
 
-- Bailey, N., W. Magley, J. Mandrup-Poulsen, K O'Donnell, R. Peets (2009) Final TMDL Report. Nutrient TMDL for the Caloosahatchee Estuary (WBIDs 3240A, 3240B and 3240C). Florida Department of Environmental Protection. Tallahassee, Florida. [pdf link](https://floridadep.gov/sites/default/files/tidal-caloosa-nutr-tmdl_0.pdf).
+- Bailey, N., W. Magley, J. Mandrup-Poulsen, K O'Donnell, R. Peets (2009) Final TMDL Report. Nutrient TMDL for the Caloosahatchee Estuary (WBIDs 3240A, 3240B and 3240C). Florida Department of Environmental Protection. Tallahassee, Florida. [pdf link](https://floridadep.gov/sites/default/files/tidal-caloosa-nutr-tmdl_0.pdf){target="_blank"}.
 
 ***
 

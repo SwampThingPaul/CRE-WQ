@@ -1,0 +1,1043 @@
+<HTML>
+<HEAD>
+<TITLE> FGDL Documentation </TITLE>
+<STYLE>
+          .pre { color: black; font-size: 12pt; font-weight: normal; font-family: courier; }
+	  strong {font-weight: normal; text-transform: uppercase; }
+</STYLE>
+</HEAD>
+<BODY>
+<table width="90%">
+<tr>
+<td>
+<strong><b>FLORIDA GEOGRAPHIC DATA LIBRARY DOCUMENTATION</b></strong><br />
+<p>
+<strong><b>TITLE: WATER BODY IDENTIFICATION NUMBERS (WBID - RUN 55) FOR THE STATE OF FLORIDA - JULY 2018</b></strong>
+</p>
+<pre>
+Geodataset Name:       WBIDS_JUL18
+Geodataset Type:       SHAPEFILE
+Geodataset Feature:    <strong>Polygon</strong>
+Feature Count:         6666
+</pre>
+</td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr>
+<td>
+<strong><b>GENERAL DESCRIPTION:</b></strong>
+<table width="650">
+<tr>
+<td>
+This is a statewide polygon layer in which each polygon has a unique Water Body Identification number (WBID - RUN 55). The assessment units are drainage basins, lakes, lake drainage areas, springs, rivers and streams, segments of rivers and streams, coastal, bay and estuarine waters in Florida. The polygons roughly delineate the drainage basins surrounding the water body assessment units. The WBIDs are used in the Basin Rotation Total Maximum Daily Load (TMDL) program as well as other applications. WBIDs are assigned a FDEP district as part of their attribution. There are multiple instances where a WBID may be assigned to an FDEP district, but physically fall within the boundary of a different district. This is because WBIDs are grouped together into basins called Planning Units and there are instances where a Planning Unit basin will fall across FDEP district boundaries. In these cases, for consistency's sake, all the WBIDs that are in the Planning Unit will be assigned to the same FDEP district. For information on which district the WBID physically falls in, please refer to the FDEP Regulatory Districts layer. This is an update to the FGDL layer WBIDS_DEC17.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td></td></tr>
+<tr>
+<td>
+<pre>
+DATA SOURCE(S):                    Florida Department of Environmental Protection, Watershed Assessment Section
+SCALE OF ORIGINAL SOURCE MAPS:     24000
+GEODATASET EXTENT:                 State of Florida<br />
+PUBLICATION DATE:                  20180723
+TIME PERIOD OF CONTENT:            Begin Date: 19990101    End Date: 20180720
+DOWNLOAD LINK:                     <A href="http://www.fgdl.org/metadataexplorer/explorer.jsp">http://www.fgdl.org/metadataexplorer/explorer.jsp</A>
+</pre>
+</td>
+</tr>
+</table>
+<P>
+<strong><b>FEATURE ATTRIBUTE TABLES:</b></strong>
+</P>
+<pre>Datafile Name: WBIDS_JUL18.DBF</pre>
+<table width="75%" cellspacing="0" cellpadding="0" border="0">
+<tr align="left">
+<td> ITEM NAME </td>
+<td>WIDTH</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">OBJECTID
+</DIV>
+</td>
+<td>4</td>
+<td>OID</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">Shape
+</DIV>
+</td>
+<td>4</td>
+<td>Geometry</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">HUC
+</DIV>
+</td>
+<td>8</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">WBID
+</DIV>
+</td>
+<td>6</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">PARENT_WBI
+</DIV>
+</td>
+<td>10</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">DISTRICT
+</DIV>
+</td>
+<td>3</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">PLANNING_U
+</DIV>
+</td>
+<td>40</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">GROUP_NUMB
+</DIV>
+</td>
+<td>8</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">GROUP_NAME
+</DIV>
+</td>
+<td>46</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">WATERBODY_
+</DIV>
+</td>
+<td>55</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">WATERBODY1
+</DIV>
+</td>
+<td>8</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">UNITS
+</DIV>
+</td>
+<td>22</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">WATER_TYPE
+</DIV>
+</td>
+<td>10</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">CLASS
+</DIV>
+</td>
+<td>2</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">CHANGES
+</DIV>
+</td>
+<td>254</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">EDITS
+</DIV>
+</td>
+<td>254</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">RUN
+</DIV>
+</td>
+<td>5</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">DESCRIPT
+</DIV>
+</td>
+<td>75</td>
+<td>String</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">FGDLAQDATE
+</DIV>
+</td>
+<td>36</td>
+<td>Date</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">AUTOID
+</DIV>
+</td>
+<td>4</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">SHAPE.AREA
+</DIV>
+</td>
+<td>0</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>
+<DIV align="left">SHAPE.LEN
+</DIV>
+</td>
+<td>0</td>
+<td>Double</td>
+</tr>
+</table>
+<p>
+<strong><b>FEATURE ATTRIBUTE TABLES CODES AND VALUES:</b></strong>
+</p>
+<P />
+<table width="75%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td width="30%">Item<pre></pre></td>
+<td>Item Description<pre></pre></td>
+</tr>
+<tr valign="top">
+<td>OBJECTID</td>
+<td>
+Internal feature number.<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>Shape</td>
+<td>
+Feature geometry.<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>HUC</td>
+<td>
+USGS Hydrologic Unit Code.<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>WBID</td>
+<td>
+Unique Alpha Numeric Water Body Identification<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>PARENT_WBI</td>
+<td>
+Undefined by Source.<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>DISTRICT</td>
+<td>
+Florida Regulatory District<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>PLANNING_U</td>
+<td>
+Grouping of WBIDs within a larger basin<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>GROUP_NUMB</td>
+<td>
+Rotating Basin Group Number 1-5<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>GROUP_NAME</td>
+<td>
+Name of Basin rotation Group, consists of multiple planning units and WBIDs<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>WATERBODY_</td>
+<td>
+The name of the waterbody being assessed<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>WATERBODY1</td>
+<td>
+The size of the waterbody being assessed<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>UNITS</td>
+<td>
+The unit of measurement the size of the waterbody being assessed is in.<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>WATER_TYPE</td>
+<td>
+Type of waterbody. (Beach, Blackwater, Coastal, Estuary, Lake, Spring, Stream)<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>CLASS</td>
+<td>
+Surface Water Classification<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>CHANGES</td>
+<td>
+Historic changes to the WBID<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>EDITS</td>
+<td>
+Additional edits made to feature<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>RUN</td>
+<td>
+The last Wbid Run Number Loaded that is represented by this dataset.<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>DESCRIPT</td>
+<td>
+FGDL added field based on WATERBODY_ and WBID.<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>FGDLAQDATE</td>
+<td>
+Date FGDL acquired the data from the Source.<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>AUTOID</td>
+<td>
+Unique ID added by GeoPlan<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>SHAPE.AREA</td>
+<td>
+Area in meters<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+<tr valign="top">
+<td>SHAPE.LEN</td>
+<td>
+Perimeter in meters<table>
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<br />
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td>
+<pre></pre>
+</td>
+</tr>
+</table>
+<strong><b>USER NOTES:</b></strong>
+<br />
+<table width="500">
+<tr>
+<td>
+<pre>
+This data is provided 'as is'. GeoPlan relied on the integrity
+of the original data layer's topology
+</pre>
+</td>
+</tr>
+</table>
+<table width="500">
+<tr>
+<td>
+<pre>
+This data is provided 'as is' by GeoPlan and is complete to our
+knowledge.
+</pre>
+</td>
+</tr>
+</table>
+<table width="500">
+<tr>
+<td>
+<pre>
+GeoPlan relied on the integrity of the attribute information within
+the original data.
+</pre>
+</td>
+</tr>
+</table>
+<table width="500">
+<tr>
+<td>
+<pre>
+Watershed Management Basin Rotation Project
+https://floridadep.gov/dear/watershed-assessment-section/content/basin-411-0#B411downloads<br /><br />
+</pre>
+</td>
+</tr>
+</table>
+<table width="500">
+<tr>
+<td>
+<pre>
+To spatially represent the water feature that is being assessed.<br /><br />
+</pre>
+</td>
+</tr>
+</table>
+<table width="500">
+<tr>
+<td>
+<pre>
+This data is provided 'as is' and its horizontal positional accuracy
+has not been verified by GeoPlan<br /><br />
+</pre>
+</td>
+</tr>
+</table>
+<table width="500">
+<tr>
+<td>
+<pre>
+This data is provided 'as is' and its vertical positional accuracy
+has not been verified by GeoPlan<br /><br />
+</pre>
+</td>
+</tr>
+</table>
+<table width="550">
+<tr>
+<td>
+<pre>
+FDEP:
+Use is limited to showing approximate feature delineations and is used for illustrative
+purposes only. This layer is not for legal decision making. Because this layer is 
+frequently modified, it is not to be used in conjunction with STORET data for 
+purposes of analysis.
+
+FDEP:
+The data set is NOT a survey document and should not be utilized as such.
+FDEP GIS data is provided as a public service. FDEP makes every effort to provide
+accurate and complete data. Metadata is provided for all datasets and no data should
+be used without first reading and understanding the limitations of the data. The
+Florida Department of Environmental Protection (FDEP) provides NO WARRANTY as to the
+accuracy of this data or any corresponding attributes or metadata. Data is provided
+in an as is condition, without warranty of any kind, either expressed or implied,
+including any assurance that the data is fit for a particular purpose. FDEP shall
+have no liability, in any case, to the use of provided data (including
+redistribution and reproduction). Full liability, responsibility and consequence
+relating to the use of provided data rest with the user.</pre>
+<br />
+</td>
+</tr>
+</table>
+<table width="550">
+<tr>
+<td>
+<pre>
+The Florida Geographic Data Library is a collection of Geospatial Data
+compiled by the University of Florida GeoPlan Center with support from
+the Florida Department of Transportation. GIS data available in FGDL is
+collected from various state, federal, and other agencies (data sources)
+who are data stewards, producers, or publishers. The data available in
+FGDL may not be the most current version of the data offered by the
+data source. University of Florida GeoPlan Center makes no guarantees
+about the currentness of the data and suggests that data users check
+with the data source to see if more recent versions of the data exist.
+
+Furthermore, the GIS data available in the FGDL are provided 'as is'.
+The University of Florida GeoPlan Center makes no warranties, guaranties
+or representations as to the truth, accuracy or completeness of the data
+provided by the data sources. The University of Florida GeoPlan Center
+makes no representations or warranties about the quality or suitability
+of the materials, either expressly or implied, including but not limited
+to any implied warranties of merchantability, fitness for a particular
+purpose, or non-infringement. The University of Florida GeoPlan Center
+shall not be liable for any damages suffered as a result of using,
+modifying, contributing or distributing the materials.
+
+A note about data scale: 
+
+Scale is an important factor in data usage.  Certain scale datasets
+are not suitable for some project, analysis, or modeling purposes.
+Please be sure you are using the best available data. 
+
+1:24000 scale datasets are recommended for projects that are at the
+county level.
+1:24000 data should NOT be used for high accuracy base mapping such
+as property parcel boundaries.
+1:100000 scale datasets are recommended for projects that are at the
+multi-county or regional level.
+1:125000 scale datasets are recommended for projects that are at the
+regional or state level or larger.
+
+Vector datasets with no defined scale or accuracy should be
+considered suspect. Make sure you are familiar with your data
+before using it for projects or analysis. Every effort has been
+made to supply the user with data documentation. For additional
+information, see the References section and the Data Source Contact
+section of this documentation. For more information regarding
+scale and accuracy, see our webpage at:
+http://geoplan.ufl.edu/education.html</pre>
+<br />
+</td>
+</tr>
+</table>
+<strong><b>REFERENCES: </b></strong>
+<table width="60%">
+<tr>
+<td>
+<pre>
+Florida Department of Environmental Protection: 
+https://floridadep.gov/
+
+Florida Department of Environmental Protection Geospatial Open Data
+http://geodata.dep.state.fl.us/datasets/waterbody-ids-wbids
+
+Watershed Management Basin Rotation Project:
+https://floridadep.gov/dear/watershed-assessment-section/content/basin-411-0#B411downloads
+</pre>
+<br />
+</td>
+</tr>
+</table>
+<strong><b>DATA LINEAGE SUMMARY: </b></strong>
+<br />
+<table width="60%">
+<tr>
+<td>
+<pre>
+Inserted updated shapefile obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.
+Process Date: <br />
+Topology cleaned up and resubmitted. WBID_Run23_1_4_06.
+Process Date: <br />
+The Watershed Rotation Groups and Schedule (Proposed) coverage was created 
+from the drainage basins coverage (basin-24 (area)). The watershed groups were 
+created by unioning the drainage basins in the basin-24 cover. The watershed 
+groups generally follow the boundaries of the USGS 8-digit HUCS. (Creation of 
+the basin-24 (area) dataset) In Spring of '97, the data was converted from NAD27 to 
+HPGN using the Arc/INFO projection command within Arc/INFO version 7.0.4. One 
+coverage of the entire state, excluding South Florida was digitized using ARC/INFO.
+The South Florida coverage was digitized by SFWMD from USGS mylars of 7.5' 
+quads dated 1978-1979 by engineers familiar with the landscape using ARC/INFO 
+6.1.1. The two coverages were joined to form a statewide coverage using the 
+update command, then polygon slivers were eliminated. Check plots were made. The
+coverage was converted to Albers Conformal Area projection and exported from the 
+VAX VMS system using ARC/INFO. On the DEC/ALPHA UNIX system, the export 
+file was imported and inserted into the (quad) library. Since the original creation of the
+WBIDS spatial dataset recommended changes to the linework by basin rotation staff 
+and outside professionals have been incorporated on a case by case basis. These 
+changes are documented in the CHANGES column of the dataset. During August of 
+2003 the ARC coverage was converted into a Geodatabase to facilitate the editing 
+process in ARCGIS. Geodatabase is joined to Access IWR database to get 
+information in specific waterbodies. For more information, contact the Department of 
+Environmental Protection or South Florida Water Management District for copies of 
+data dictionaries. Dataset copied.
+Process Date: <br />
+Dataset updated for IWR Run 24.1 5/1/2006
+Process Date: <br />
+Updated shapefile for Run 26. 50 records added.
+Process Date: <br />
+Inserted updated shapefile obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.
+Process Date: <br />
+WBIDS_Run22_9_15_05, which translates into WBID shapefile based on 
+IWR Run 22, completed on September 15, 2005 was submitted as a new 
+SDE DataMiner Layer.
+Process Date: <br />
+Updated shapefile obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.
+Process Date: <br />
+Updated for Run 40
+Process Date: <br />
+Dataset obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.
+Process Date: <br />
+Updated shapefile for Run 25. 14 new records added.
+Process Date: <br />
+Layer had polygon boundaries updated for IWR Run 23. 
+WBIDS_Run23_12_20_05, which translates into WBID shapefile based 
+on IWR Run 23, was submitted for update to SDE DataMiner Layer.
+Process Date: <br />
+Dataset updated for Run 45
+Process Date: <br />
+Updated for Run 44.
+Process Date: <br />
+Inserted updated shapefile obtained from Ron Hughes (WRM) and 
+inserted in ArcSDE. Metadata updated. This update has 5 fewer records 
+than the previous versions 6262 records. 
+This was a result of elimination of sliver parcels and merging of parcels.
+Process Date: <br />
+Layer updated for Run 46
+Process Date: <br />
+Inserted updated shapefile obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.
+Process Date: <br />
+Updated shapefile for Run 24. Five records removed.
+Process Date: <br />
+Data updated for Run 35
+Process Date: <br />
+Updated for Run 43.
+Process Date: <br />
+Dataset updated for Run 39
+Process Date: <br />
+WBID Shapefile updated for IWR Run 28. Fifteen records added.
+Process Date: 20070405
+<br />
+Inserted updated shapefile obtained from Ren Arbogast/Ron Hughes (WRM) 
+and inserted in ArcSDE. Metadata updated.
+Process Date: 20070411
+<br />
+WBID shapefile updated for IWR Run 29
+Process Date: 20070625
+<br />
+Inserted updated shapefile obtained from Ren Arbogast (WRM) and 
+inserted in ArcSDE. Metadata updated. This layer is added in the 
+Environmental Monitoring and Modeling category in addition to the Water 
+Resources (Inland) category in DataCatalog.
+Process Date: 20070813
+<br />
+Major edits were made to the Everglades West Coast Group for Run 30. 
+Other minor updates were also done for Run 30.
+Process Date: 20071001
+<br />
+Inserted updated shapefile obtained from Ren Arbogast (WRM) and inserted in ArcSDE. 
+Metadata updated.
+Process Date: 20071008
+<br />
+Dataset updated for IWR Run 31.
+Process Date: 20080220
+<br />
+Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.
+Process Date: 20080317
+<br />
+Dataset updated to reflect changes for IWR Run 32
+Process Date: 20080422
+<br />
+Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.
+Process Date: 20080429
+<br />
+Dataset updated for Run 33.
+Process Date: 20080721
+<br />
+Inserted updated shapefile obtained from WRM in ArcSDE.
+Metadata updated.
+Process Date: 20080820
+<br />
+The schema (attribute table) of DEP.WBIDS was modified in ArcSDE 
+as per a request from the WBIDS data stewards with this update. 
+The field "PK_BASIN" was renamed "PARENT_WBID". 
+The data type of the field "MILES" was changed from a text field to 
+a numeric DOUBLE field.
+Process Date: 20090303
+<br />
+Data updated for Run 36.
+Process Date: 20090604
+<br />
+Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.
+Process Date: 20090616
+<br />
+Updated for Run 38.
+Process Date: 20090929
+<br />
+Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.
+Process Date: 20091124
+<br />
+Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.
+Process Date: 20100209
+<br />
+Updated for Run 41
+Process Date: 20100729
+<br />
+Inserted new layer obtained from WRM in ArcSDE. 
+Metadata updated.
+Process Date: 20100820
+<br />
+More updates for Run 41 at the request of WAS section.
+Process Date: 20100830
+<br />
+Updated layer in ArcSDE. Metadata updated.
+Process Date: 20100916
+<br />
+Updated for Run 42.
+Process Date: 20101203
+<br />
+Updated data in ArcSDE and symbology as displayed in DataMiner. 
+Metadata updated.
+Process Date: 20110105
+<br />
+Added OBJECTID column and removed the old OBJECT_1 column from the schema.
+Process Date: 20110325
+<br />
+Updated layer in ArcSDE and DataMiner. Metadata updated.
+Process Date: 20110406
+<br />
+Updated layer in ArcSDE and DataMiner. Metadata updated.
+Process Date: 20110919
+<br />
+Updated layer in ArcSDE and DataMiner. Metadata updated.
+Process Date: 20120622
+<br />
+Updated layer in ArcSDE and DataMiner. Metadata updated.
+Process Date: 20120814
+<br />
+Updated for Run 47.
+Process Date: 20121203
+<br />
+Updated layer in ArcSDE and DataMiner. Metadata updated.
+Process Date: 20121204
+<br />
+Updated for Run 49
+Process Date: 20140408
+<br />
+Updated data in SDE/DataMiner. Metadata updated
+Process Date: 20140414
+<br />
+Updated for Run 50.
+Process Date: 20150818
+<br />
+Updated data obtained from DEAR and updated the same in the GIS library.
+Process Date: 20150819
+<br />
+Updated for Run 52.
+
+For further information regarding the listing process, please contact:
+Kevin ODonnell
+Kevin.ODonnell@dep.state.fl.us 
+850-245-8469
+Process Date: 20160711
+<br />
+Updated for Run 53.
+
+For further information regarding the listing process, please contact:
+Kevin ODonnell
+Kevin.ODonnell@dep.state.fl.us 
+850-245-8469
+Process Date: 20170321
+<br />
+Updated data obtained from DEAR and updated the same in the GIS Library.
+Process Date: 20170329
+<br />
+Dataset updated for Run 54.
+
+Process_Contact: 
+Contact_Organization: FDEP 
+Contact_Person: Phillip Homann 
+Contact_Position: Environmental Consultant 
+Contact_Address: 
+Address_Type: physical 
+Address: 
+2600 Blair Stone Road,
+City: Tallahassee 
+State_or_Province: FL 
+Postal_Code: 32399-2400 
+Country: US 
+Contact_Voice_Telephone: 850-245-8472 
+Contact_Electronic_Mail_Address: philip.homann@dep.state.fl.us
+
+For further information regarding the listing process, 
+please contact Kevin ODonnell via email or at 850-245-8469.
+Process Date: 20171220
+<br />
+Updated data obtained from DEAR and updated the same in the GIS library.
+Process Date: 20180118
+<br />
+Dataset updated for Run 55.
+Process Date: 20180720
+<br />
+Updated data obtained from DEAR and updated the same in the GIS library.
+Process Date: 20180723
+<br />
+The GeoPlan Center downloaded the Waterbody IDs (WBIDs)
+dataset on August 1st, 2018 from the FDEP Data Portal:
+
+Florida Department of Environmental Protection Geospatial Open Data:
+http://geodata.dep.state.fl.us/
+
+http://geodata.dep.state.fl.us/datasets/waterbody-ids-wbids
+
+Please Note: Data is also available via the FTP website:
+http://publicfiles.dep.state.fl.us/otis/gis/data/WBIDS_SP.zip
+
+WBIDS_SP.zip
+WBIDS_SP.gdb
+
+The GDB layer was exported to shapefile.
+
+The dataset's projection was redefined to FGDL Albers.
+
+During the QA/QC process the following tasks were undertaken:
+- Redefined the dataset's projection from FDEP Albers to FGDL Albers.
+- Deleted the OBJECTID field.
+- Uppercased all records in the table.
+- A DESCRIPT field was added based on WATERBODY_ and WBID.
+- A FGDLAQDATE field was added based on date downloaded from source.
+- Renamed file from WBIDS_SP to WBIDS_JUL18.
+Process Date: 20180808
+<br />
+Dataset copied.
+Process Date: 20180817
+<br />
+</pre>
+</td>
+</tr>
+</table>
+<strong><b>MAP PROJECTION PARAMETERS: </b></strong>
+<br />
+<pre>
+Projection                          ALBERS
+Datum                               HPGN
+Units                               METERS
+Spheroid                            GRS1980
+1st Standard Parallel               24  0  0.000
+2nd Standard Parallel               31 30  0.000
+Central Meridian                   -84 00  0.000
+Latitude of Projection's Origin     24  0  0.000
+False Easting (meters)              400000.00000
+False Northing (meters)             0.00000
+</pre>
+<p>
+<strong><b>DATA SOURCE CONTACT (S):</b></strong>
+</p>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td>
+<pre>
+Name:
+Abbr. Name:
+Address:
+
+
+Phone:
+
+Web site:
+E-mail:
+Contact Person:
+         Phone:
+        E-mail:
+</pre>
+</td>
+<td valign="top"><pre>Florida Department of Environmental Protection (FDEP) OTIS/GIS Section
+FDEP
+2600 Blair Stone Road MS 6520
+Tallahassee, FL
+32399-2400
+
+<br />
+http://publicfiles.dep.state.fl.us/otis/gis/data/WBIDS_SP.zip
+GIS.Librarian@dep.state.fl.us
+GIS Librarian
+</pre>
+</td>
+</tr>
+</table>
+<br />
+<strong><b>FGDL CONTACT:</b></strong>
+<pre>
+Name:                   FLORIDA GEOGRAPHIC DATA LIBRARY
+Abbr. Name:             FGDL
+Address:                Florida Geographic Data Library
+                        431 Architecture Building
+                        PO Box 115706
+                        Gainesville, FL  32611-5706
+Web site:               <a href="http://www.fgdl.org">http://www.fgdl.org</a>
+
+Contact FGDL: 
+
+      Technical Support:	        <a href="http://www.fgdl.org/fgdlfeed.html">http://www.fgdl.org/fgdlfeed.html</a>
+      FGDL Frequently Asked Questions:  <a href="http://www.fgdl.org/fgdlfaq.html">http://www.fgdl.org/fgdlfaq.html</a>
+      FGDL Mailing Lists:		<a href="http://www.fgdl.org/fgdl-l.html">http://www.fgdl.org/fgdl-l.html</a>
+      For FGDL Software:                <a href="http://www.fgdl.org/software.html">http://www.fgdl.org/software.html</a>
+</pre>
+</BODY>
+</HTML>

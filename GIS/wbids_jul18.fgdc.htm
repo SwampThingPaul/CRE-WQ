@@ -1,0 +1,2323 @@
+<HTML>
+<HEAD>
+<SCRIPT><!--
+
+      function fix(e) {
+        var par = e.parentNode;
+        e.id = "";
+        e.style.marginLeft = "0.42in";
+        var pos = e.innerText.indexOf("\n");
+        if (pos > 0) {
+          while (pos > 0) {
+            var t = e.childNodes(0);
+            var n = document.createElement("PRE");
+            var s = t.splitText(pos);
+            e.insertAdjacentElement("afterEnd", n);
+            n.appendChild(s);
+            n.style.marginLeft = "0.42in";
+            e = n;
+            pos = e.innerText.indexOf("\n");
+          }
+          var count = (par.children.length);
+          for (var i = 0; i < count; i++) {
+            e = par.children(i);
+            if (e.tagName == "PRE") {
+              pos = e.innerText.indexOf(">");
+              if (pos != 0) {
+                n = document.createElement("DD");
+                e.insertAdjacentElement("afterEnd", n);
+                n.innerText = e.innerText;
+                e.removeNode(true);
+              }
+            }
+          }
+          if (par.children.tags("PRE").length > 0) {
+            count = (par.children.length);
+            for (i = 0; i < count; i++) {
+              e = par.children(i);
+              if (e.tagName == "PRE") {
+                e.id = "";
+                if (i < (count-1)) {
+                  var e2 = par.children(i + 1);
+                  if (e2.tagName == "PRE") {
+                    e.insertAdjacentText("beforeEnd", e2.innerText+"\n");
+                    e2.removeNode(true);
+                    count = count-1;
+                    i = i-1;
+                  }
+                }
+              }
+            }
+          }
+        }
+        else {
+          n = document.createElement("DD");
+          par.appendChild(n);
+          n.innerText = e.innerText;
+          e.removeNode(true);
+        }
+      }
+
+    --></SCRIPT>
+</HEAD>
+<BODY oncontextmenu="return true">
+<A name="Top" />
+<H1>WATER BODY IDENTIFICATION NUMBERS (WBID - RUN 55) FOR THE STATE OF FLORIDA - JULY 2018</H1>
+<H2>Metadata:</H2>
+<UL>
+<LI><A HREF="#Identification_Information">Identification_Information</A></LI>
+<LI><A HREF="#Data_Quality_Information">Data_Quality_Information</A></LI>
+<LI><A HREF="#Spatial_Data_Organization_Information">Spatial_Data_Organization_Information</A></LI>
+<LI><A HREF="#Spatial_Reference_Information">Spatial_Reference_Information</A></LI>
+<LI><A HREF="#Entity_and_Attribute_Information">Entity_and_Attribute_Information</A></LI>
+<LI>
+<A HREF="#1">
+
+                  Distribution_Information
+                </A>
+</LI>
+<LI><A HREF="#Metadata_Reference_Information">Metadata_Reference_Information</A></LI>
+</UL>
+<A name="Identification_Information"><HR /></A>
+<DL>
+<DT><I>Identification_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Citation:</I></DT>
+<DD>
+<DL>
+<DT><I>Citation_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Originator:</I>
+Florida Department of Environmental Protection, Watershed Assessment Section</DT>
+<DT><I>Publication_Date:</I>
+20180723</DT>
+<DT><I>Title:</I></DT>
+<DD>WATER BODY IDENTIFICATION NUMBERS (WBID - RUN 55) FOR THE STATE OF FLORIDA - JULY 2018</DD>
+<DT><I>Edition:</I>
+WBID Run 55</DT>
+<DT><I>Geospatial_Data_Presentation_Form:</I>
+vector digital data</DT>
+<DT><I>Publication_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Publication_Place:</I>
+Tallahassee, FL</DT>
+<DT><I>Publisher:</I>
+Florida Department of Environmental Protection, Watershed Assessment Section</DT>
+</DL>
+</DD>
+<DT><I>Other_Citation_Details:</I></DT>
+<DD>State of Florida</DD>
+<DT><I>Online_Linkage:</I>
+<A TARGET="viewer" HREF="http://publicfiles.dep.state.fl.us/otis/gis/data/WBIDS_SP.zip">
+http://publicfiles.dep.state.fl.us/otis/gis/data/WBIDS_SP.zip</A>
+</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Description:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Abstract:</I></DT>
+<PRE ID="original">This is a statewide polygon layer in which each polygon has a unique Water Body Identification number (WBID - RUN 55). The assessment units are drainage basins, lakes, lake drainage areas, springs, rivers and streams, segments of rivers and streams, coastal, bay and estuarine waters in Florida. The polygons roughly delineate the drainage basins surrounding the water body assessment units. The WBIDs are used in the Basin Rotation Total Maximum Daily Load (TMDL) program as well as other applications. WBIDs are assigned a FDEP district as part of their attribution. There are multiple instances where a WBID may be assigned to an FDEP district, but physically fall within the boundary of a different district. This is because WBIDs are grouped together into basins called Planning Units and there are instances where a Planning Unit basin will fall across FDEP district boundaries. In these cases, for consistency's sake, all the WBIDs that are in the Planning Unit will be assigned to the same FDEP district. For information on which district the WBID physically falls in, please refer to the FDEP Regulatory Districts layer. This is an update to the FGDL layer WBIDS_DEC17.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Purpose:</I></DT>
+<PRE ID="original">To spatially represent the water feature that is being assessed.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Supplemental_Information:</I></DT>
+<PRE ID="original">Watershed Management Basin Rotation Project
+https://floridadep.gov/dear/watershed-assessment-section/content/basin-411-0#B411downloads</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Time_Period_of_Content:</I></DT>
+<DD>
+<DL>
+<DT><I>Time_Period_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Range_of_Dates/Times:</I></DT>
+<DD>
+<DL>
+<DT><I>Beginning_Date:</I>
+19990101</DT>
+<DT><I>Ending_Date:</I>
+20180720</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<DIV>
+<DT><I>Currentness_Reference:</I></DT>
+<PRE ID="original">publication date</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Status:</I></DT>
+<DD>
+<DL>
+<DT><I>Progress:</I>
+Complete</DT>
+<DT><I>Maintenance_and_Update_Frequency:</I>
+As needed</DT>
+</DL>
+</DD>
+<DT><I>Spatial_Domain:</I></DT>
+<DD>
+<DL>
+<DT><I>Bounding_Coordinates:</I></DT>
+<DD>
+<DL>
+<DT><I>West_Bounding_Coordinate:</I>
+-87.429040</DT>
+<DT><I>East_Bounding_Coordinate:</I>
+-79.872251</DT>
+<DT><I>North_Bounding_Coordinate:</I>
+30.983191</DT>
+<DT><I>South_Bounding_Coordinate:</I>
+24.492815</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Keywords:</I></DT>
+<DD>
+<DL>
+<DT><I>Theme:</I></DT>
+<DD>
+<DL>
+<DT><I>Theme_Keyword_Thesaurus:</I>
+ISO 19115 Topic Category</DT>
+<DT><I>Theme_Keyword:</I>
+environment</DT>
+<DT><I>Theme_Keyword:</I>
+inlandWaters</DT>
+</DL>
+</DD>
+<DT><I>Theme:</I></DT>
+<DD>
+<DL>
+<DT><I>Theme_Keyword_Thesaurus:</I>
+NONE</DT>
+<DT><I>Theme_Keyword:</I>
+Environmental Monitoring and Modeling</DT>
+<DT><I>Theme_Keyword:</I>
+Water Body</DT>
+<DT><I>Theme_Keyword:</I>
+Water Resources (Inland)</DT>
+<DT><I>Theme_Keyword:</I>
+WBID</DT>
+<DT><I>Theme_Keyword:</I>
+Water</DT>
+<DT><I>Theme_Keyword:</I>
+Waterbody</DT>
+</DL>
+</DD>
+<DT><I>Place:</I></DT>
+<DD>
+<DL>
+<DT><I>Place_Keyword_Thesaurus:</I>
+NONE</DT>
+<DT><I>Place_Keyword:</I>
+Florida</DT>
+</DL>
+</DD>
+<DT><I>Temporal:</I></DT>
+<DD>
+<DL>
+<DT><I>Temporal_Keyword_Thesaurus:</I>
+NONE</DT>
+<DT><I>Temporal_Keyword:</I>
+2018</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Access_Constraints:</I>
+None</DT>
+<DIV>
+<DT><I>Use_Constraints:</I></DT>
+<PRE ID="original">FDEP:
+Use is limited to showing approximate feature delineations and is used for illustrative
+purposes only. This layer is not for legal decision making. Because this layer is 
+frequently modified, it is not to be used in conjunction with STORET data for 
+purposes of analysis.
+
+FDEP:
+The data set is NOT a survey document and should not be utilized as such.
+FDEP GIS data is provided as a public service. FDEP makes every effort to provide
+accurate and complete data. Metadata is provided for all datasets and no data should
+be used without first reading and understanding the limitations of the data. The
+Florida Department of Environmental Protection (FDEP) provides NO WARRANTY as to the
+accuracy of this data or any corresponding attributes or metadata. Data is provided
+in an as is condition, without warranty of any kind, either expressed or implied,
+including any assurance that the data is fit for a particular purpose. FDEP shall
+have no liability, in any case, to the use of provided data (including
+redistribution and reproduction). Full liability, responsibility and consequence
+relating to the use of provided data rest with the user.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Point_of_Contact:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization_Primary:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization:</I>
+Florida Department of Environmental Protection, Watershed Assessment Section</DT>
+<DT><I>Contact_Person:</I>
+Phillip Homann</DT>
+</DL>
+</DD>
+<DT><I>Contact_Position:</I>
+Environmental Consultant</DT>
+<DT><I>Contact_Address:</I></DT>
+<DD>
+<DL>
+<DT><I>Address_Type:</I>
+physical address</DT>
+<DIV>
+<DT><I>Address:</I></DT>
+<PRE ID="original">2600 Blair Stone Road,</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>City:</I>
+Tallahassee</DT>
+<DT><I>State_or_Province:</I>
+FL</DT>
+<DT><I>Postal_Code:</I>
+32399-2400</DT>
+<DT><I>Country:</I>
+USA</DT>
+</DL>
+</DD>
+<DT><I>Contact_Voice_Telephone:</I>
+850-245-8472</DT>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+philip.homann@dep.state.fl.us</DT>
+<DT><I>Contact Instructions:</I></DT>
+<DIV>
+<PRE ID="original">For further information regarding the listing process, please contact:
+Kevin ODonnell
+Kevin.ODonnell@dep.state.fl.us 
+850-245-8469</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+</DL>
+</DD>
+<DIV>
+<DT><I>Data_Set_Credit:</I></DT>
+<PRE ID="original">FDEP/DEAR</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Native_Data_Set_Environment:</I></DT>
+<DD>Microsoft Windows Vista Version 6.1 (Build 7601) Service Pack 1; ESRI ArcCatalog 9.3.1.4000</DD>
+<DT><I>Cross_Reference:</I></DT>
+<DD>
+<DL>
+<DT><I>Citation_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Other_Citation_Details:</I></DT>
+<DD>Florida Department of Environmental Protection: 
+https://floridadep.gov/
+
+Florida Department of Environmental Protection Geospatial Open Data
+http://geodata.dep.state.fl.us/datasets/waterbody-ids-wbids
+
+Watershed Management Basin Rotation Project:
+https://floridadep.gov/dear/watershed-assessment-section/content/basin-411-0#B411downloads</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Data_Quality_Information"><HR /></A>
+<DL>
+<DT><I>Data_Quality_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Accuracy:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Attribute_Accuracy_Report:</I></DT>
+<PRE ID="original">GeoPlan relied on the integrity of the attribute information within
+the original data.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DIV>
+<DT><I>Logical_Consistency_Report:</I></DT>
+<PRE ID="original">This data is provided 'as is'. GeoPlan relied on the integrity
+of the original data layer's topology</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Completeness_Report:</I></DT>
+<PRE ID="original">This data is provided 'as is' by GeoPlan and is complete to our
+knowledge.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Positional_Accuracy:</I></DT>
+<DD>
+<DL>
+<DT><I>Horizontal_Positional_Accuracy:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Horizontal_Positional_Accuracy_Report:</I></DT>
+<PRE ID="original">This data is provided 'as is' and its horizontal positional accuracy
+has not been verified by GeoPlan</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Vertical_Positional_Accuracy:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Vertical_Positional_Accuracy_Report:</I></DT>
+<PRE ID="original">This data is provided 'as is' and its vertical positional accuracy
+has not been verified by GeoPlan</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Lineage:</I></DT>
+<DD>
+<DL>
+<DT><I>Source_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Source_Scale_Denominator:</I>
+24000</DT>
+<DT><I>Type_of_Source_Media:</I>
+online</DT>
+<DT><I>Source_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DIV>
+<DT><I>Source_Contribution:</I></DT>
+<PRE ID="original">Spatial and Attribute Information</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Topology cleaned up and resubmitted. WBID_Run23_1_4_06.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">The Watershed Rotation Groups and Schedule (Proposed) coverage was created 
+from the drainage basins coverage (basin-24 (area)). The watershed groups were 
+created by unioning the drainage basins in the basin-24 cover. The watershed 
+groups generally follow the boundaries of the USGS 8-digit HUCS. (Creation of 
+the basin-24 (area) dataset) In Spring of '97, the data was converted from NAD27 to 
+HPGN using the Arc/INFO projection command within Arc/INFO version 7.0.4. One 
+coverage of the entire state, excluding South Florida was digitized using ARC/INFO.
+The South Florida coverage was digitized by SFWMD from USGS mylars of 7.5' 
+quads dated 1978-1979 by engineers familiar with the landscape using ARC/INFO 
+6.1.1. The two coverages were joined to form a statewide coverage using the 
+update command, then polygon slivers were eliminated. Check plots were made. The
+coverage was converted to Albers Conformal Area projection and exported from the 
+VAX VMS system using ARC/INFO. On the DEC/ALPHA UNIX system, the export 
+file was imported and inserted into the (quad) library. Since the original creation of the
+WBIDS spatial dataset recommended changes to the linework by basin rotation staff 
+and outside professionals have been incorporated on a case by case basis. These 
+changes are documented in the CHANGES column of the dataset. During August of 
+2003 the ARC coverage was converted into a Geodatabase to facilitate the editing 
+process in ARCGIS. Geodatabase is joined to Access IWR database to get 
+information in specific waterbodies. For more information, contact the Department of 
+Environmental Protection or South Florida Water Management District for copies of 
+data dictionaries. Dataset copied.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Contact:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization_Primary:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization:</I>
+FDEP</DT>
+<DT><I>Contact_Person:</I>
+Janis Paulsen</DT>
+</DL>
+</DD>
+<DT><I>Contact_Position:</I>
+Systems Project Administrator</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset updated for IWR Run 24.1 5/1/2006</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated shapefile for Run 26. 50 records added.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">WBIDS_Run22_9_15_05, which translates into WBID shapefile based on 
+IWR Run 22, completed on September 15, 2005 was submitted as a new 
+SDE DataMiner Layer.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated shapefile obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 40</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated shapefile for Run 25. 14 new records added.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Layer had polygon boundaries updated for IWR Run 23. 
+WBIDS_Run23_12_20_05, which translates into WBID shapefile based 
+on IWR Run 23, was submitted for update to SDE DataMiner Layer.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset updated for Run 45</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 44.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from Ron Hughes (WRM) and 
+inserted in ArcSDE. Metadata updated. This update has 5 fewer records 
+than the previous versions 6262 records. 
+This was a result of elimination of sliver parcels and merging of parcels.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Layer updated for Run 46</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from Ron Hughes (WRM) and inserted in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated shapefile for Run 24. Five records removed.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Data updated for Run 35</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 43.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset updated for Run 39</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">WBID Shapefile updated for IWR Run 28. Fifteen records added.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20070405</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from Ren Arbogast/Ron Hughes (WRM) 
+and inserted in ArcSDE. Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20070411</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">WBID shapefile updated for IWR Run 29</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20070625</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from Ren Arbogast (WRM) and 
+inserted in ArcSDE. Metadata updated. This layer is added in the 
+Environmental Monitoring and Modeling category in addition to the Water 
+Resources (Inland) category in DataCatalog.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20070813</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Major edits were made to the Everglades West Coast Group for Run 30. 
+Other minor updates were also done for Run 30.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20071001</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from Ren Arbogast (WRM) and inserted in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20071008</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset updated for IWR Run 31.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20080220</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20080317</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset updated to reflect changes for IWR Run 32</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20080422</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20080429</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset updated for Run 33.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20080721</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from WRM in ArcSDE.
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20080820</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">The schema (attribute table) of DEP.WBIDS was modified in ArcSDE 
+as per a request from the WBIDS data stewards with this update. 
+The field "PK_BASIN" was renamed "PARENT_WBID". 
+The data type of the field "MILES" was changed from a text field to 
+a numeric DOUBLE field.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20090303</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Data updated for Run 36.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20090604</DT>
+<DT><I>Process_Time:</I>
+111520</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20090616</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 38.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20090929</DT>
+<DT><I>Process_Time:</I>
+075415</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20091124</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted updated shapefile obtained from WRM in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20100209</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 41</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20100729</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Inserted new layer obtained from WRM in ArcSDE. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20100820</DT>
+<DT><I>Process_Time:</I>
+135912</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">More updates for Run 41 at the request of WAS section.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20100830</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated layer in ArcSDE. Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20100916</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 42.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20101203</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated data in ArcSDE and symbology as displayed in DataMiner. 
+Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20110105</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Added OBJECTID column and removed the old OBJECT_1 column from the schema.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20110325</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated layer in ArcSDE and DataMiner. Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20110406</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated layer in ArcSDE and DataMiner. Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20110919</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated layer in ArcSDE and DataMiner. Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20120622</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated layer in ArcSDE and DataMiner. Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20120814</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 47.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20121203</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated layer in ArcSDE and DataMiner. Metadata updated.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20121204</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 49</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20140408</DT>
+<DT><I>Process_Contact:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization_Primary:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization:</I>
+FDEP</DT>
+<DT><I>Contact_Person:</I>
+Janis Morrow</DT>
+</DL>
+</DD>
+<DT><I>Contact_Position:</I>
+Environmental Manager</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated data in SDE/DataMiner. Metadata updated</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20140414</DT>
+<DT><I>Process_Contact:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization_Primary:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization:</I>
+Florida Department of Environmental Protection (FDEP) OTIS/GIS Section</DT>
+</DL>
+</DD>
+<DT><I>Contact_Address:</I></DT>
+<DD>
+<DL>
+<DT><I>Address_Type:</I>
+mailing and physical</DT>
+<DIV>
+<DT><I>Address:</I></DT>
+<PRE ID="original">Twin towers MS 6520</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Address:</I></DT>
+<PRE ID="original">2600 Blair Stone Road</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>City:</I>
+Tallahassee</DT>
+<DT><I>State_or_Province:</I>
+FL</DT>
+<DT><I>Postal_Code:</I>
+32399-2400</DT>
+<DT><I>Country:</I>
+US</DT>
+</DL>
+</DD>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+GIS.Librarian@dep.state.fl.us</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 50.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20150818</DT>
+<DT><I>Process_Contact:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization_Primary:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization:</I>
+FDEP</DT>
+<DT><I>Contact_Person:</I>
+Phillip Homann</DT>
+</DL>
+</DD>
+<DT><I>Contact_Position:</I>
+Environmental Consultant</DT>
+<DT><I>Contact_Address:</I></DT>
+<DD>
+<DL>
+<DT><I>Address_Type:</I>
+physical</DT>
+<DIV>
+<DT><I>Address:</I></DT>
+<PRE ID="original">2600 Blair Stone Road,</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>City:</I>
+Tallahassee</DT>
+<DT><I>State_or_Province:</I>
+FL</DT>
+<DT><I>Postal_Code:</I>
+32399-2400</DT>
+<DT><I>Country:</I>
+US</DT>
+</DL>
+</DD>
+<DT><I>Contact_Voice_Telephone:</I>
+850-245-8472</DT>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+philip.homann@dep.state.fl.us</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated data obtained from DEAR and updated the same in the GIS library.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20150819</DT>
+<DT><I>Process_Contact:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization_Primary:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization:</I>
+Florida Department of Environmental Protection (FDEP) OTIS/GIS Section</DT>
+</DL>
+</DD>
+<DT><I>Contact_Address:</I></DT>
+<DD>
+<DL>
+<DT><I>Address_Type:</I>
+mailing and physical</DT>
+<DIV>
+<DT><I>Address:</I></DT>
+<PRE ID="original">2600 Blair Stone Rd MS 6520</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>City:</I>
+Tallahassee</DT>
+<DT><I>State_or_Province:</I>
+FL</DT>
+<DT><I>Postal_Code:</I>
+32399-2400</DT>
+<DT><I>Country:</I>
+US</DT>
+</DL>
+</DD>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+GIS.Librarian@dep.state.fl.us</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 52.
+
+For further information regarding the listing process, please contact:
+Kevin ODonnell
+Kevin.ODonnell@dep.state.fl.us 
+850-245-8469</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20160711</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated for Run 53.
+
+For further information regarding the listing process, please contact:
+Kevin ODonnell
+Kevin.ODonnell@dep.state.fl.us 
+850-245-8469</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20170321</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated data obtained from DEAR and updated the same in the GIS Library.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20170329</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset updated for Run 54.
+
+Process_Contact: 
+Contact_Organization: FDEP 
+Contact_Person: Phillip Homann 
+Contact_Position: Environmental Consultant 
+Contact_Address: 
+Address_Type: physical 
+Address: 
+2600 Blair Stone Road,
+City: Tallahassee 
+State_or_Province: FL 
+Postal_Code: 32399-2400 
+Country: US 
+Contact_Voice_Telephone: 850-245-8472 
+Contact_Electronic_Mail_Address: philip.homann@dep.state.fl.us
+
+For further information regarding the listing process, 
+please contact Kevin ODonnell via email or at 850-245-8469.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20171220</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated data obtained from DEAR and updated the same in the GIS library.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20180118</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset updated for Run 55.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20180720</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Updated data obtained from DEAR and updated the same in the GIS library.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>FDEP</DD>
+<DT><I>Process_Date:</I>
+20180723</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">The GeoPlan Center downloaded the Waterbody IDs (WBIDs)
+dataset on August 1st, 2018 from the FDEP Data Portal:
+
+Florida Department of Environmental Protection Geospatial Open Data:
+http://geodata.dep.state.fl.us/
+
+http://geodata.dep.state.fl.us/datasets/waterbody-ids-wbids
+
+Please Note: Data is also available via the FTP website:
+http://publicfiles.dep.state.fl.us/otis/gis/data/WBIDS_SP.zip
+
+WBIDS_SP.zip
+WBIDS_SP.gdb
+
+The GDB layer was exported to shapefile.
+
+The dataset's projection was redefined to FGDL Albers.
+
+During the QA/QC process the following tasks were undertaken:
+- Redefined the dataset's projection from FDEP Albers to FGDL Albers.
+- Deleted the OBJECTID field.
+- Uppercased all records in the table.
+- A DESCRIPT field was added based on WATERBODY_ and WBID.
+- A FGDLAQDATE field was added based on date downloaded from source.
+- Renamed file from WBIDS_SP to WBIDS_JUL18.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>GeoPlan</DD>
+<DT><I>Process_Date:</I>
+20180808</DT>
+</DL>
+</DD>
+<DT><I>Process_Step:</I></DT>
+<DD>
+<DL>
+<DIV>
+<DT><I>Process_Description:</I></DT>
+<PRE ID="original">Dataset copied.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Source_Used_Citation_Abbreviation:</I></DT>
+<DD>Server=wopr.fla-etat.org; Service=5151; User=etat; Version=SDE.DEFAULT</DD>
+<DT><I>Process_Date:</I>
+20180817</DT>
+<DT><I>Process_Time:</I>
+14335100</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Spatial_Data_Organization_Information"><HR /></A>
+<DL>
+<DT><I>Spatial_Data_Organization_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Direct_Spatial_Reference_Method:</I>
+Vector</DT>
+<DT><I>Point_and_Vector_Object_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>SDTS_Terms_Description:</I></DT>
+<DD>
+<DL>
+<DT><I>SDTS_Point_and_Vector_Object_Type:</I>
+G-polygon</DT>
+<DT><I>Point_and_Vector_Object_Count:</I>
+6666</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Spatial_Reference_Information"><HR /></A>
+<DL>
+<DT><I>Spatial_Reference_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Horizontal_Coordinate_System_Definition:</I></DT>
+<DD>
+<DL>
+<DT><I>Planar:</I></DT>
+<DD>
+<DL>
+<DT><I>Map_Projection:</I></DT>
+<DD>
+<DL>
+<DT><I>Map_Projection_Name:</I>
+Albers Conical Equal Area</DT>
+<DT><I>Albers_Conical_Equal_Area:</I></DT>
+<DD>
+<DL>
+<DT><I>Standard_Parallel:</I>
+24.000000</DT>
+<DT><I>Standard_Parallel:</I>
+31.500000</DT>
+<DT><I>Longitude_of_Central_Meridian:</I>
+-84.000000</DT>
+<DT><I>Latitude_of_Projection_Origin:</I>
+24.000000</DT>
+<DT><I>False_Easting:</I>
+400000.000000</DT>
+<DT><I>False_Northing:</I>
+0.000000</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Planar_Coordinate_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Planar_Coordinate_Encoding_Method:</I>
+coordinate pair</DT>
+<DT><I>Coordinate_Representation:</I></DT>
+<DD>
+<DL>
+<DT><I>Abscissa_Resolution:</I>
+0.002048</DT>
+<DT><I>Ordinate_Resolution:</I>
+0.002048</DT>
+</DL>
+</DD>
+<DT><I>Planar_Distance_Units:</I>
+meters</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Geodetic_Model:</I></DT>
+<DD>
+<DL>
+<DT><I>Horizontal_Datum_Name:</I>
+D_North_American_1983_HARN</DT>
+<DT><I>Ellipsoid_Name:</I>
+Geodetic Reference System 80</DT>
+<DT><I>Semi-major_Axis:</I>
+6378137.000000</DT>
+<DT><I>Denominator_of_Flattening_Ratio:</I>
+298.257222</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Vertical_Coordinate_System_Definition:</I></DT>
+<DD>
+<DL>
+<DT><I>Altitude_System_Definition:</I></DT>
+<DD>
+<DL>
+<DT><I>Altitude_Resolution:</I>
+1.000000</DT>
+<DT><I>Altitude_Encoding_Method:</I>
+Explicit elevation coordinate included with horizontal coordinates</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Entity_and_Attribute_Information"><HR /></A>
+<DL>
+<DT><I>Entity_and_Attribute_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Detailed_Description:</I></DT>
+<DD>
+<DL>
+<DT><I>Entity_Type:</I></DT>
+<DD>
+<DL>
+<DT><I>Entity_Type_Label:</I>
+WBIDS_JUL18</DT>
+<DT><I>Entity_Type_Definition:</I></DT>
+<DD>WBIDS_JUL18.DBF</DD>
+<DT><I>Entity_Type_Definition_Source:</I></DT>
+<DD>FDEP</DD>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+OBJECTID</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Internal feature number.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">ESRI</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Attribute_Domain_Values:</I></DT>
+<DD>
+<DL>
+<DT><I>Unrepresentable_Domain:</I></DT>
+<DD>Sequential unique whole numbers that are automatically generated.</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+Shape</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Feature geometry.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">ESRI</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Attribute_Domain_Values:</I></DT>
+<DD>
+<DL>
+<DT><I>Unrepresentable_Domain:</I></DT>
+<DD>Coordinates defining the features.</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+HUC</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">USGS Hydrologic Unit Code.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+WBID</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Unique Alpha Numeric Water Body Identification</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+PARENT_WBI</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Undefined by Source.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+DISTRICT</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Florida Regulatory District</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+PLANNING_U</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Grouping of WBIDs within a larger basin</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+GROUP_NUMB</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Rotating Basin Group Number 1-5</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+GROUP_NAME</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Name of Basin rotation Group, consists of multiple planning units and WBIDs</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+WATERBODY_</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">The name of the waterbody being assessed</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+WATERBODY1</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">The size of the waterbody being assessed</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+UNITS</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">The unit of measurement the size of the waterbody being assessed is in.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+WATER_TYPE</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Type of waterbody. (Beach, Blackwater, Coastal, Estuary, Lake, Spring, Stream)</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+CLASS</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Surface Water Classification</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+CHANGES</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Historic changes to the WBID</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+EDITS</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Additional edits made to feature</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">FDEP</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+RUN</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">The last Wbid Run Number Loaded that is represented by this dataset.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">GeoPlan</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+DESCRIPT</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">FGDL added field based on WATERBODY_ and WBID.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">GeoPlan</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+FGDLAQDATE</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Date FGDL acquired the data from the Source.</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">GeoPlan</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+AUTOID</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Unique ID added by GeoPlan</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">GeoPlan</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+SHAPE.AREA</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Area in meters</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">GeoPlan</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+<DT><I>Attribute:</I></DT>
+<DD>
+<DL>
+<DT><I>Attribute_Label:</I>
+SHAPE.LEN</DT>
+<DIV>
+<DT><I>Attribute_Definition:</I></DT>
+<PRE ID="original">Perimeter in meters</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DIV>
+<DT><I>Attribute_Definition_Source:</I></DT>
+<PRE ID="original">GeoPlan</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A NAME="1">
+<HR />
+</A>
+<DL>
+<DT><I>Distribution_Information:</I>
+</DT>
+<DD>
+<DL>
+<DT><I>Distributor:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization_Primary:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization:</I>
+Florida Geographic Data Library (FGDL)</DT>
+<DT><I>Contact_Person:</I>
+</DT>
+</DL>
+</DD>
+<DT><I>Contact_Position:</I>
+</DT>
+<DT><I>Contact_Address:</I></DT>
+<DD>
+<DL>
+<DT><I>Address_Type:</I>
+mailing address</DT>
+<DIV>
+<DT><I>Address:</I></DT>
+<PRE ID="original">431 Architecture PO Box 115706</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>City:</I>
+Gainesville</DT>
+<DT><I>State_or_Province:</I>
+Florida</DT>
+<DT><I>Postal_Code:</I>
+32611-5706</DT>
+<DT><I>Country:</I>
+United States</DT>
+</DL>
+</DD>
+<DT><I>Contact_Voice_Telephone:</I>
+</DT>
+<DT><I>Contact_TDD/TTY_Telephone:</I>
+</DT>
+<DT><I>Contact_Facsimile_Telephone:</I>
+</DT>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+Web site: http://www.fgdl.org</DT>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+Technical Support: http://www.fgdl.org/fgdlfeed.html</DT>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+For FGDL Software: http://www.fgdl.org/software.html</DT>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+FGDL Frequently Asked Questions: http://www.fgdl.org/fgdlfaq.html</DT>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+Mailing list for FGDL: http://www.fgdl.org/fgdl-l.html</DT>
+<DT><I>Hours_of_Service:</I>
+</DT>
+<DT><I>Contact Instructions:</I></DT>
+<DIV>
+<PRE ID="original"></PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Resource_Description:</I>
+DOWNLOADABLE DATA</DT>
+<DIV>
+<DT><I>Distribution_Liability:</I></DT>
+<PRE ID="original">The Florida Geographic Data Library is a collection of Geospatial Data
+compiled by the University of Florida GeoPlan Center with support from
+the Florida Department of Transportation. GIS data available in FGDL is
+collected from various state, federal, and other agencies (data sources)
+who are data stewards, producers, or publishers. The data available in
+FGDL may not be the most current version of the data offered by the
+data source. University of Florida GeoPlan Center makes no guarantees
+about the currentness of the data and suggests that data users check
+with the data source to see if more recent versions of the data exist.
+
+Furthermore, the GIS data available in the FGDL are provided 'as is'.
+The University of Florida GeoPlan Center makes no warranties, guaranties
+or representations as to the truth, accuracy or completeness of the data
+provided by the data sources. The University of Florida GeoPlan Center
+makes no representations or warranties about the quality or suitability
+of the materials, either expressly or implied, including but not limited
+to any implied warranties of merchantability, fitness for a particular
+purpose, or non-infringement. The University of Florida GeoPlan Center
+shall not be liable for any damages suffered as a result of using,
+modifying, contributing or distributing the materials.
+
+A note about data scale: 
+
+Scale is an important factor in data usage.  Certain scale datasets
+are not suitable for some project, analysis, or modeling purposes.
+Please be sure you are using the best available data. 
+
+1:24000 scale datasets are recommended for projects that are at the
+county level.
+1:24000 data should NOT be used for high accuracy base mapping such
+as property parcel boundaries.
+1:100000 scale datasets are recommended for projects that are at the
+multi-county or regional level.
+1:125000 scale datasets are recommended for projects that are at the
+regional or state level or larger.
+
+Vector datasets with no defined scale or accuracy should be
+considered suspect. Make sure you are familiar with your data
+before using it for projects or analysis. Every effort has been
+made to supply the user with data documentation. For additional
+information, see the References section and the Data Source Contact
+section of this documentation. For more information regarding
+scale and accuracy, see our webpage at:
+http://geoplan.ufl.edu/education.html</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>Standard_Order_Process:</I></DT>
+<DD>
+<DL>
+<DT><I>Digital_Form:</I></DT>
+<DD>
+<DL>
+<DT><I>Digital_Transfer_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Transfer_Size:</I>
+37.687</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Technical_Prerequisites:</I></DT>
+<DD>This data is intended for use with a Geographic Information Systems or Remote Sensing software package.</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+<A name="Metadata_Reference_Information"><HR /></A>
+<DL>
+<DT><I>Metadata_Reference_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Metadata_Date:</I>
+20180817</DT>
+<DT><I>Metadata_Contact:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Information:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization_Primary:</I></DT>
+<DD>
+<DL>
+<DT><I>Contact_Organization:</I>
+Florida Department of Environmental Protection (FDEP) OTIS/GIS Section</DT>
+<DT><I>Contact_Person:</I>
+GIS Librarian</DT>
+</DL>
+</DD>
+<DT><I>Contact_Address:</I></DT>
+<DD>
+<DL>
+<DT><I>Address_Type:</I>
+mailing and physical address</DT>
+<DIV>
+<DT><I>Address:</I></DT>
+<PRE ID="original">2600 Blair Stone Road MS 6520</PRE>
+<SCRIPT>fix(original)</SCRIPT>
+</DIV>
+<DT><I>City:</I>
+Tallahassee</DT>
+<DT><I>State_or_Province:</I>
+FL</DT>
+<DT><I>Postal_Code:</I>
+32399-2400</DT>
+<DT><I>Country:</I>
+USA</DT>
+</DL>
+</DD>
+<DT><I>Contact_Electronic_Mail_Address:</I>
+GIS.Librarian@dep.state.fl.us</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+<DT><I>Metadata_Standard_Name:</I>
+FGDC Content Standards for Digital Geospatial Metadata</DT>
+<DT><I>Metadata_Standard_Version:</I>
+FGDC-STD-001-1998</DT>
+<DT><I>Metadata_Time_Convention:</I>
+local time</DT>
+<DT><I>Metadata_Extensions:</I></DT>
+<DD>
+<DL>
+<DT><I>Online_Linkage:</I>
+<A TARGET="viewer" HREF="http://www.esri.com/metadata/esriprof80.html">
+http://www.esri.com/metadata/esriprof80.html</A>
+</DT>
+<DT><I>Profile_Name:</I>
+ESRI Metadata Profile</DT>
+</DL>
+</DD>
+</DL>
+</DD>
+</DL>
+<A HREF="#Top">Back to Top</A>
+</BODY>
+</HTML>
